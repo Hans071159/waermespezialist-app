@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.1.15  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Christoph M&ouml;wes">
+	<META NAME="CREATED" CONTENT="20250506;15062520">
+	<META NAME="CHANGEDBY" CONTENT="Christoph M&ouml;wes">
+	<META NAME="CHANGED" CONTENT="20250506;15070245">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 2cm }
+		P { margin-bottom: 0.21cm }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="de-DE" DIR="LTR">
+<P STYLE="margin-bottom: 0cm">&lt;!DOCTYPE html&gt;<BR>&lt;html
+lang=&quot;de&quot;&gt;<BR>&lt;head&gt;<BR>  &lt;meta charset=&quot;UTF-8&quot;
+/&gt;<BR>  &lt;meta name=&quot;viewport&quot;
+content=&quot;width=device-width, initial-scale=1.0&quot;/&gt;<BR> 
+&lt;title&gt;W&auml;rmepumpen-F&ouml;rderrechner&lt;/title&gt;<BR><BR>
+ &lt;link rel=&quot;manifest&quot; href=&quot;manifest.json&quot;&gt;<BR>
+ &lt;meta name=&quot;theme-color&quot; content=&quot;#0077b6&quot;&gt;<BR><BR>
+ &lt;link rel=&quot;icon&quot; href=&quot;icons/icon-192.png&quot;
+sizes=&quot;192x192&quot;&gt;<BR>  &lt;link rel=&quot;apple-touch-icon&quot;
+href=&quot;icons/icon-192.png&quot;&gt;<BR><BR>  &lt;style&gt;<BR>   
+body { font-family: Arial, sans-serif; margin: 0; background:
+#f0f4f8; color: #333; }<BR>    header { background-color: #0077b6;
+color: white; padding: 20px; text-align: center; }<BR>    main {
+display: flex; flex-wrap: wrap; justify-content: space-between;
+max-width: 1200px; margin: auto; padding: 20px; }<BR>    .calculator,
+.results { flex: 1 1 500px; background: white; margin: 10px; padding:
+20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }<BR>
+   h2 { color: #0077b6; margin-top: 0; }<BR>    label { display:
+block; margin-top: 10px; font-weight: bold; }<BR>    input, select {
+width: 100%; padding: 10px; margin-top: 5px; margin-bottom: 15px;
+border: 1px solid #ccc; border-radius: 5px; }<BR>    button {
+background-color: #38b000; color: white; padding: 12px; border: none;
+border-radius: 6px; font-size: 1em; cursor: pointer; margin-bottom:
+10px; width: 100%; }<BR>    button:hover { background-color: #2c8a00;
+}<BR>    table { width: 100%; margin-top: 20px; border-collapse:
+collapse; }<BR>    table th, table td { padding: 10px; border: 1px
+solid #ccc; text-align: left; }<BR>    table th { background-color:
+#0077b6; color: white; }<BR>    .note { font-size: 0.9em; color:
+#666; }<BR>    footer { background-color: #0077b6; color: white;
+text-align: center; padding: 15px; font-size: 0.9em; margin-top:
+30px; }<BR>    @media screen and (max-width: 768px) { main {
+flex-direction: column; padding: 10px; } }<BR> 
+&lt;/style&gt;<BR>&lt;/head&gt;<BR>&lt;body&gt;<BR><BR>&lt;header&gt;<BR>
+ &lt;h1&gt;W&auml;rmepumpen-F&ouml;rderrechner&lt;/h1&gt;<BR>&lt;/header&gt;<BR><BR>&lt;main&gt;<BR>
+ &lt;div class=&quot;calculator&quot;&gt;<BR>    &lt;h2&gt;Eingabe&lt;/h2&gt;<BR>
+   &lt;label for=&quot;cost&quot;&gt;Gesamtkosten inkl. Einbau
+(&euro;)&lt;/label&gt;<BR>    &lt;input type=&quot;number&quot;
+id=&quot;cost&quot; placeholder=&quot;z.&#8239;B. 22000&quot; /&gt;<BR><BR>
+   &lt;label for=&quot;type&quot;&gt;W&auml;rmepumpenart&lt;/label&gt;<BR>
+   &lt;select id=&quot;type&quot;&gt;<BR>      &lt;option
+value=&quot;Luft-Wasser&quot;&gt;Luft-Wasser&lt;/option&gt;<BR>     
+&lt;option value=&quot;Sole-Wasser&quot;&gt;Sole-Wasser&lt;/option&gt;<BR>
+     &lt;option value=&quot;Wasser-Wasser&quot;&gt;Wasser-Wasser&lt;/option&gt;<BR>
+     &lt;option value=&quot;Warmwasser-WP&quot;&gt;Warmwasser-WP&lt;/option&gt;<BR>
+   &lt;/select&gt;<BR><BR>    &lt;label for=&quot;strompreis&quot;&gt;Strompreis
+(&euro;/kWh)&lt;/label&gt;<BR>    &lt;input type=&quot;number&quot;
+id=&quot;strompreis&quot; value=&quot;0.35&quot; step=&quot;0.01&quot;
+/&gt;<BR><BR>    &lt;label for=&quot;gaspreis&quot;&gt;Gaspreis
+(&euro;/kWh)&lt;/label&gt;<BR>    &lt;input type=&quot;number&quot;
+id=&quot;gaspreis&quot; value=&quot;0.12&quot; step=&quot;0.01&quot;
+/&gt;<BR><BR>    &lt;label for=&quot;verbrauch&quot;&gt;J&auml;hrlicher
+Heizbedarf (kWh)&lt;/label&gt;<BR>    &lt;input type=&quot;number&quot;
+id=&quot;verbrauch&quot; value=&quot;6000&quot; /&gt;<BR><BR>   
+&lt;label for=&quot;cop&quot;&gt;COP-Effizienz (Coefficient of
+Performance)&lt;/label&gt;<BR>    &lt;input type=&quot;number&quot;
+id=&quot;cop&quot; value=&quot;3.5&quot; step=&quot;0.1&quot; /&gt;<BR><BR>
+   &lt;p class=&quot;note&quot;&gt;Der COP (Coefficient of
+Performance) gibt an, wie effizient Ihre W&auml;rmepumpe arbeitet. Je
+h&ouml;her der Wert, desto besser.&lt;/p&gt;<BR><BR>    &lt;button
+onclick=&quot;calculate()&quot;&gt;Berechne&lt;/button&gt;<BR>   
+&lt;button onclick=&quot;openPDF()&quot;&gt;Ergebnis als PDF
+anzeigen&lt;/button&gt;<BR>  &lt;/div&gt;<BR><BR>  &lt;div
+class=&quot;results&quot;&gt;<BR>    &lt;h2&gt;Ergebnisse&lt;/h2&gt;<BR>
+   &lt;div id=&quot;output&quot;&gt;&lt;p&gt;Bitte gib deine Daten
+ein und klicke auf &quot;Berechne&quot;.&lt;/p&gt;&lt;/div&gt;<BR>   
+&lt;p class=&quot;note&quot;&gt;<BR>      &lt;strong&gt;Hinweis:&lt;/strong&gt;
+Die tats&auml;chliche F&ouml;rderh&ouml;he ist abh&auml;ngig von der
+Pr&uuml;fung durch die KfW oder das zust&auml;ndige BAFA.&lt;br&gt;<BR>
+     &lt;br&gt;<BR>      &lt;strong&gt;Besondere Hinweise:&lt;/strong&gt;<BR>
+     &lt;ul&gt;<BR>        &lt;li&gt;F&ouml;rderantrag muss
+&lt;strong&gt;vor Beginn&lt;/strong&gt; der Ma&szlig;nahme gestellt
+werden&lt;/li&gt;<BR>       
+&lt;li&gt;&lt;strong&gt;Energieeffizienz-Experte&lt;/strong&gt; ist
+einzubinden&lt;/li&gt;<BR>        &lt;li&gt;Die endg&uuml;ltige
+Entscheidung trifft die zust&auml;ndige F&ouml;rderstelle&lt;/li&gt;<BR>
+     &lt;/ul&gt;<BR>    &lt;/p&gt;<BR>  &lt;/div&gt;<BR>&lt;/main&gt;<BR><BR>&lt;footer&gt;<BR>
+ &copy; 2025 W&auml;rmepumpen-Rechner | C. M&ouml;wes - Ihr
+W&auml;rmespezialist aus Everswinkel<BR>&lt;/footer&gt;<BR><BR>&lt;script
+src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js&quot;&gt;&lt;/script&gt;<BR>&lt;script
+src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js&quot;&gt;&lt;/script&gt;<BR><BR>&lt;script&gt;<BR>
+ let resultData = [];<BR>  function calculate() {<BR>    const cost =
+parseFloat(document.getElementById(&quot;cost&quot;).value);<BR>   
+const type = document.getElementById(&quot;type&quot;).value;<BR>   
+const strompreis =
+parseFloat(document.getElementById(&quot;strompreis&quot;).value);<BR>
+   const gaspreis =
+parseFloat(document.getElementById(&quot;gaspreis&quot;).value);<BR> 
+  const verbrauch =
+parseFloat(document.getElementById(&quot;verbrauch&quot;).value);<BR>
+   const cop = parseFloat(document.getElementById(&quot;cop&quot;).value);<BR>
+   const output = document.getElementById(&quot;output&quot;);<BR>   
+resultData = [];<BR><BR>    if (isNaN(cost) || isNaN(strompreis) ||
+isNaN(gaspreis) || isNaN(verbrauch) || isNaN(cop)) {<BR>     
+output.innerHTML = &quot;&lt;p style='color:red;'&gt;Bitte alle
+Felder korrekt ausf&uuml;llen.&lt;/p&gt;&quot;;<BR>      return;<BR> 
+  }<BR><BR>    const stromverbrauch = verbrauch / cop;<BR>    const
+stromkosten = stromverbrauch * strompreis;<BR>    const gaskosten =
+verbrauch * gaspreis;<BR>    const ersparnisJahr = gaskosten -
+stromkosten;<BR>    const monatsStrom = stromkosten / 12;<BR>   
+const monatsGas = gaskosten / 12;<BR>    const monatsErsparnis =
+monatsGas - monatsStrom;<BR><BR>    output.innerHTML = `<BR>     
+&lt;table style=&quot;width:100%; font-size:1em;&quot;&gt;<BR>       
+&lt;tr&gt;&lt;td&gt;&lt;strong&gt;Monatliche
+Stromkosten:&lt;/strong&gt;&lt;/td&gt;&lt;td
+style=&quot;text-align:right;&quot;&gt;${monatsStrom.toFixed(2)}&#8239;&euro;&lt;/td&gt;&lt;/tr&gt;<BR>
+       &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Monatliche
+Gaskosten:&lt;/strong&gt;&lt;/td&gt;&lt;td
+style=&quot;text-align:right;&quot;&gt;${monatsGas.toFixed(2)}&#8239;&euro;&lt;/td&gt;&lt;/tr&gt;<BR>
+       &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Monatliche
+Ersparnis:&lt;/strong&gt;&lt;/td&gt;&lt;td style=&quot;text-align:right;
+color:green;&quot;&gt;&lt;strong&gt;${monatsErsparnis.toFixed(2)}&#8239;&euro;&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;<BR>
+       &lt;tr&gt;&lt;td colspan=&quot;2&quot;
+style=&quot;height:15px;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;<BR>       
+&lt;tr&gt;&lt;td&gt;&lt;strong&gt;J&auml;hrliche
+Ersparnis:&lt;/strong&gt;&lt;/td&gt;&lt;td style=&quot;text-align:right;
+color:green;&quot;&gt;&lt;strong&gt;${ersparnisJahr.toFixed(2)}&#8239;&euro;&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;<BR>
+     &lt;/table&gt;<BR>    `;<BR><BR>    let tableHTML =
+`&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;F&ouml;rderstufe&lt;/th&gt;&lt;th&gt;F&ouml;rderh&ouml;he
+(&euro;)&lt;/th&gt;&lt;th&gt;Eigenanteil (&euro;)&lt;/th&gt;&lt;th&gt;Amortisation
+(Jahre)&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;`;<BR>    for
+(let p = 20; p &lt;= 70; p += 10) {<BR>      let foerderung = type
+=== &quot;Warmwasser-WP&quot; ? 0 : cost * (p / 100);<BR>      let
+eigenanteil = cost - foerderung;<BR>      let amortisation =
+ersparnisJahr &gt; 0 ? (eigenanteil / ersparnisJahr).toFixed(1) :
+&quot;nicht berechenbar&quot;;<BR>      tableHTML += `&lt;tr&gt;&lt;td&gt;Bei
+${p}%&lt;/td&gt;&lt;td
+style=&quot;text-align:right;&quot;&gt;${foerderung.toFixed(2)}&lt;/td&gt;&lt;td
+style=&quot;text-align:right;&quot;&gt;${eigenanteil.toFixed(2)}&lt;/td&gt;&lt;td
+style=&quot;text-align:right;&quot;&gt;${amortisation}&lt;/td&gt;&lt;/tr&gt;`;<BR>
+     resultData.push([`Bei ${p}%`, `${foerderung.toFixed(2)}`,
+`${eigenanteil.toFixed(2)}`, `${amortisation}`,
+`${monatsStrom.toFixed(2)}`, `${monatsGas.toFixed(2)}`,
+`${monatsErsparnis.toFixed(2)}`, `${ersparnisJahr.toFixed(2)}`]);<BR>
+   }<BR>    tableHTML += &quot;&lt;/tbody&gt;&lt;/table&gt;&quot;;<BR>
+   output.innerHTML += tableHTML;<BR>  }<BR><BR>  function openPDF()
+{<BR>    const { jsPDF } = window.jspdf;<BR>    const doc = new
+jsPDF();<BR>    doc.setFontSize(14);<BR>    doc.text(&quot;Ihr
+Ergebnis W&auml;rmepumpen-F&ouml;rderung &amp; Amortisation&quot;,
+14, 20);<BR>    doc.setFontSize(10);<BR>    doc.text(&quot;Hinweis:
+Die tats&auml;chliche F&ouml;rderh&ouml;he ist abh&auml;ngig von der
+Pr&uuml;fung durch die KfW oder das zust&auml;ndige BAFA.&quot;, 14,
+30);<BR>    if (resultData.length &gt; 0) {<BR>      doc.autoTable({<BR>
+       startY: 40,<BR>        head: [[&quot;F&ouml;rderstufe&quot;,
+&quot;F&ouml;rderh&ouml;he (&euro;)&quot;, &quot;Eigenanteil (&euro;)&quot;,
+&quot;Amortisation (Jahre)&quot;, &quot;Monatliche Stromkosten (&euro;)&quot;,
+&quot;Monatliche Gaskosten (&euro;)&quot;, &quot;Monatliche Ersparnis
+(&euro;)&quot;, &quot;J&auml;hrliche Ersparnis (&euro;)&quot;]],<BR> 
+      body: resultData,<BR>        styles: { halign: &quot;right&quot;
+},<BR>        headStyles: { halign: &quot;center&quot;, fillColor:
+[0, 119, 182] },<BR>      });<BR>    } else {<BR>     
+doc.text(&quot;Bitte zuerst auf 'Berechne' klicken.&quot;, 14, 50);<BR>
+   }<BR>    const pdfData = doc.output('blob');<BR>    const url =
+URL.createObjectURL(pdfData);<BR>    window.open(url, '_blank');<BR> 
+}<BR><BR>  if ('serviceWorker' in navigator) {<BR>   
+navigator.serviceWorker.register('service-worker.js').then(reg =&gt;
+console.log('Service Worker registriert!', reg)).catch(err =&gt;
+console.error('Service Worker Fehler:', err));<BR> 
+}<BR>&lt;/script&gt;<BR><BR>&lt;/body&gt;<BR>&lt;/html&gt;<BR><BR>
+</P>
+</BODY>
+</HTML>
